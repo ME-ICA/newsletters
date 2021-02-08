@@ -1,0 +1,92 @@
+<h1>tedana February 2021 Update</h1>
+Since our late December newsletter, we have created a new stable release available on PyPI!
+You can upgrade your local installation to the latest 0.0.9 version by running <xmp>pip install -U tedana</xmp>.
+We encourage everyone to go and check it out, as it includes many new bug fixes, improvements, and breaking changes.
+
+<h2>New Contributors</h2>
+We are excited to welcome three new contributors since our last newsletter: M. Versluis, Z. Ahmed, and A. Khojandi!
+Thanks to all of our contributors for their continued input and help in creating tedana.
+The community has now grown to 20 contributors, and we always look forward to seeing more new faces!
+If you’re not sure where to start, please feel free to open an issue or join our next
+<a href="https://tedana.readthedocs.io/en/latest/developing.html?highlight=developer%20call#monthly-developer-calls">monthly developer's call</a>.
+
+<h2>Governance Updates</h2>
+We have recently overhauled our governance structure, moving from a Benevolent-Dictator-for-Life (BDFL) model to a Steering committee structure.
+We have also implemented specific maintainer roles to better track project leadership, and we encourage contributors to self-describe their work on tedana in the new
+<a href="https://github.com/ME-ICA/tedana/blob/main/contributions.md">contributions description file</a>.
+You can learn more about our new governance structure and current project leadership in
+<a href="https://tedana.readthedocs.io/en/latest/governance.html">our documentation</a>.
+We encourage any community members who are interested in taking a more active role in tedana to open an issue and add themselves as maintainers!
+
+<h2>Code Enhancements</h2>
+<ul>
+    <li>New interactive reports!
+        Check them out!
+        User-facing documentation is available
+        <a href="https://tedana.readthedocs.io/en/latest/reporting.html">here</a>.
+        You can also see two example reports
+        <a href="https://me-ica.github.io/tedana-ohbm-2020/">here</a>.
+        </li>
+    <li>If no BOLD-like ICA components are found, tedana will now re-run the ICA step with a new seed.</li>
+    <li>Documentation has been improved both on readthedocs and inside of docstrings.</li>
+    <li>Added new documentation for multi-echo acquisition on Philips scanners <a href="https://tedana.readthedocs.io/en/latest/acquisition.html#philips">here</a>.</li>
+    <li>T2* values now have a nonzero floor.</li>
+    <li>When opening an issue, there is now a neurostars link for more general questions.</li>
+    <li>Added variance-explained method for PCA (only mdl supported).</li>
+</ul>
+
+<h2>Breaking Changes</h2>
+<ul>
+    <li> The main branch is now "main" instead of "master."</li>
+    <li>"T1c" is now "mir" for minimum image regression.</li>
+    <li>For the "--manacc" option, you should supply a list of integers instead of a comma-separated string.</li>
+</ul>
+
+<h2>Bug Fixes</h2>
+<ul>
+    <li>Windows path support added for our testing suite.</li>
+</ul>
+
+
+<h2>Full Commit History Since 0.0.9a1</h2>
+
+54f65eb Update acquisition.rst to include information for Philips scanners (#579) by mjversluis on Thu Jul 9 20:16:37 2020 +0200
+03694bd docs: add mjversluis as a contributor (#580) by allcontributors[bot] on Thu Jul 9 14:48:10 2020 -0400
+ddaa4d5 [DOC] multi-echo reports (#457) by Elizabeth DuPre on Sun Jul 12 21:17:18 2020 -0400
+5ccc4f2 [DOC] Include [all] in developer setup install guidelines (#572) by Taylor Salo on Fri Jul 17 18:16:16 2020 -0400
+06de703 docs: add mvaziri as a contributor (#587) by allcontributors[bot] on Sun Jul 19 13:34:52 2020 -0400
+d933592 [FIX] Add non-zero floor to T2* values (#585) by Taylor Salo on Sun Aug 2 13:56:31 2020 -0400
+387db31 [TST] Show logging output during integration tests (#588) by Taylor Salo on Fri Aug 7 13:26:06 2020 -0400
+75bdda8 [MAINT] Add workflow to autodeploy to PyPi (#568) by Taylor Salo on Fri Aug 21 10:59:04 2020 -0400
+150b5c0 [DOC] Use README as long_desc (#595) by Elizabeth DuPre on Wed Aug 26 11:25:53 2020 -0400
+3374356 [ENH] Use list of ints for manacc instead of comma-separated string (#598) by Taylor Salo on Fri Sep 18 16:18:55 2020 -0400
+b0b81bc [DOC] Miscellaneous improvements to documentation (#575) by Taylor Salo on Mon Sep 21 22:58:52 2020 -0400
+e4e3e26 [DOC] Added link for tedana NeuroStars tag. (#608) by aykhojandi on Mon Sep 28 12:00:44 2020 -0400
+5f64cbc docs: add aykhojandi as a contributor (#610) by allcontributors[bot] on Mon Oct 5 10:36:31 2020 -0400
+65dda07 [DOC] Rewrite new PCA section (#613) by Eneko Uruñuela on Mon Oct 19 19:13:37 2020 +0200
+0eaa3ba [DOC] Reporting documentation (#465) by Javier Gonzalez-Castillo on Mon Oct 19 18:18:21 2020 -0400
+005e9d9 [REF] Rename T1c to "minimum image regression" (#609) by Taylor Salo on Mon Oct 19 18:34:25 2020 -0400
+91b0379 docs: add smoia as a contributor (#616) by allcontributors[bot] on Tue Oct 20 13:50:51 2020 -0400
+61af3f1 [MAINT] Add all contributors to Zenodo file (#614) by Taylor Salo on Mon Nov 2 21:13:44 2020 -0500
+c121195 Add diagonal reference line to kappa/rho plot (#625) by Zaki A on Mon Dec 7 14:18:38 2020 -0600
+b4a58c8 Allow CI for all-contributors (#627) by Joshua Teves on Mon Dec 7 16:54:08 2020 -0500
+23d58f4 [DOC] add notZaki as a contributor (#630) by allcontributors[bot] on Mon Dec 7 17:41:46 2020 -0500
+45e5ad7 [DOC] Governance update (#615) by Dan Handwerker on Tue Dec 8 09:49:00 2020 -0500
+5369e1d [FIX] Show logs in re-runs (#637) by Zaki A on Mon Jan 4 08:55:56 2021 -0600
+4ecdf4b [DOC] Add docstring to fit_loglinear (#646) by Taylor Salo on Fri Jan 15 11:53:00 2021 -0500
+63070e2 [FIX] Eliminate duplicate lines in logs (#645) by Taylor Salo on Fri Jan 15 11:53:41 2021 -0500
+dae9f20 [DOC] Add NeuroStars question link (#651) by Taylor Salo on Sat Jan 16 10:13:52 2021 -0500
+6bfb6fa [DOC] Log count of floored voxels in T2* estimation (#656) by Taylor Salo on Fri Jan 22 17:26:27 2021 -0500
+82bda7c [ENH] Implement variance explained threshold-based PCA option (#658) by Taylor Salo on Fri Jan 22 17:26:50 2021 -0500
+1e7d42f [DOC] Clarify role of components in output (#660) by Zaki A on Tue Jan 26 09:04:46 2021 -0600
+dd513ae docs: add notZaki as a contributor (#661) by allcontributors[bot] on Tue Jan 26 10:05:12 2021 -0500
+f422a2f [REF] Replace deprecated get_data() with get_fdata() (#664) by Zaki A on Wed Jan 27 09:05:47 2021 -0600
+74b922d [ENH] Add threshold argument to make_adaptive_mask (#635) by Taylor Salo on Wed Jan 27 17:28:53 2021 -0500
+cd59211 [ENH] Add ability to re-run ICA when no BOLD components are found (#663) by Taylor Salo on Thu Jan 28 10:11:52 2021 -0500
+ca7e145 [ENH] Allow tedpca argument to be a float inside a string (#665) by Zaki A on Thu Jan 28 13:33:24 2021 -0600
+65a285d [REF] Replaces master with main where possible (#667) by Joshua Teves on Mon Feb 1 18:57:35 2021 -0500
+197513d [DOC] Starts contribution page (#624) by Joshua Teves on Tue Feb 2 09:36:40 2021 -0500
+9516608 [MAINT] Add new contributors to Zenodo file (#671) by Taylor Salo on Wed Feb 3 13:32:54 2021 -0500
+14be852 [MAINT] Move long description logic from info.py to setup.py (#670) by Zaki A on Wed Feb 3 13:41:41 2021 -0600
+f8802df [FIX] Normalize data to zero mean and unit variance before dimension estimation (#636) by Zaki A on Fri Feb 5 09:22:26 2021 -0600
+08f6a87 [MAINT] Support Windows' paths; Update zenodo & contributor count (#672) by Zaki A on Fri Feb 5 12:26:35 2021 -0600
