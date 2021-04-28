@@ -1,0 +1,53 @@
+<h1>tedana February 2021 Update</h1>
+Since our February newsletter, we have created a new stable release available on PyPI!
+This includes important bug fixes.
+You can upgrade your local installation to the version 0.0.10 by running
+<xmp>pip install -U tedana</xmp>
+We encourage everyone to go and check it out, as it includes the bug fixes described below.
+
+<h2>Governance Updates</h2>
+We have recently overhauled our governance structure, moving from a Benevolent-Dictator-for-Life (BDFL) model to a steering committee structure.
+We have also implemented specific maintainer roles to better track project leadership, and we encourage contributors to self-describe their work on tedana in the new
+<a href="https://github.com/ME-ICA/tedana/blob/main/contributions.md">contributions description file</a>.
+You can learn more about our new governance structure and current project leadership in
+<a href="https://tedana.readthedocs.io/en/latest/governance.html">our documentation</a>.
+We encourage any community members who are interested in taking a more active role in tedana to open an issue and add themselves as maintainers!
+
+<h2>Breaking Changes</h2>
+<ul>
+    <li> Support for Python 3.5 is dropped. </li>
+    <li> PCA is now normalized over time, which may change number of PCA components retained </li>
+    <li> A bug-fix for ICA f-statistic thresholding may change some component classifications and metric calculations. </li>
+    <li> For datasets with more than 3 echoes, a bug was fixed where we required all echoes to be "good" instead of just the minimum three needed for accurate metric calculation. This may significantly impact classifications on datasets with more than 3 echoes. </li>
+</ul>
+
+<h2>Enhancements</h2>
+<ul>
+    <li> Formal support added for Python 3.8 and 3.9. </li>
+    <li> We now normalize PCA over time. </li>
+</ul>
+
+<h2>Bug Fixes</h2>
+<ul>
+    <li> In prior releases, f-statistic maps were thresholded just before kappa/rho calculation, such that the metric maps related to T2 and S0 were not aligned with the values used to calculate kappa and rho. All T2 and S0 maps are now thresholded at calculation, so that their derivative metrics reflect this thresholding as well. </li>
+    <li> In previous releases, there was a bug where datasets required all echoes be considered "good" for a voxel to be included in denoising. However, in datasets with more than three echoes, this is too conservative. This release requires only the minimal 3 echoes in order to perform accurate metric calculations. </li>
+</ul>
+
+
+<h2>Full Commit History Since 0.0.9</h2>
+* [MAINT] Modifies actions to run on release publish (#725) @jbteves <br>
+* [DOC] Add warning about not using release-drafter releases to developer
+instructions (#718) @tsalo <br>
+* [FIX] Bumps (down) sklearn and scipy (#723) @emdupre <br>
+* [MAINT] Drop 3.5 support and begin 3.8 and 3.9 support (#721) @tsalo <br>
+* [FIX] Calculate Kappa and Rho on full F-statistic maps (#714) @tsalo <br>
+* [FIX] Adds f_max to right place (#712) @jbteves <br>
+* [DOC] Added MAPCA to list of dependencies (#709) @handwerkerd <br>
+* [DOC] Add references to HTML report (#695) @tsalo <br>
+* [FIX] Enable normalization in mapca call (#705) @notZaki <br>
+* [REF] Replace MAPCA code with mapca library (#641) @tsalo <br>
+* [REF] Normalize over time in MAPCA (#702) @tsalo <br>
+* [ENH] Match BokehJS with BokehPy version (#703) @notZaki <br>
+* [MAINT] Update Kirstie affiliation in zenodo file (#694) @KirstieJane <br>
+* [MAINT] Add Javier Gonzalez-Castillo to Zenodo file (#682) @javiergcas <br>
+* [DOC] Harmonizes Governance Documents (#678) @jbteves <br>
